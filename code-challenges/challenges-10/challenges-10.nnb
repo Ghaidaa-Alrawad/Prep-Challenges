@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Birthday Cake Candles](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function birthdayCakeCandles(candles) {\n    // Write your code here\n    let maxHeight = 0; \n    let count = 0;\n\n    for (let i = 0; i < candles.length; i++) {\n        const height = candles[i];\n\n        if (height > maxHeight) {\n            maxHeight = height;\n            count = 1; \n        } else if (height === maxHeight) {\n            count++; \n        }\n    }\n\n    return count; \n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Compare The Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function compareTriplets(a, b) {\n    let alicePoints = 0; \n    let bobPoints = 0; \n\n    for (let i = 0; i < 3; i++) {\n        if (a[i] > b[i]) {\n            alicePoints++;\n        } else if (a[i] < b[i]) {\n            bobPoints++;\n        }\n    }\n\n    return [alicePoints, bobPoints]; \n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Migratory Birds](https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function migratoryBirds(arr) {\n    // Write your code here\n    const frequencyMap = new Map(); //used map to store the frequency of each bird type\n\n    for (let i = 0; i < arr.length; i++) {\n        const birdType = arr[i];\n        if (frequencyMap.has(birdType)) {\n            frequencyMap.set(birdType, frequencyMap.get(birdType) + 1);\n        } else {\n            frequencyMap.set(birdType, 1);\n        }\n    }\n\n    let maxFrequency = 0;\n    let mostFrequentType = -1; \n\n    frequencyMap.forEach((frequency, birdType) => {\n        if (frequency > maxFrequency) {\n            maxFrequency = frequency;\n            mostFrequentType = birdType;\n        } else if (frequency === maxFrequency && birdType < mostFrequentType) {\n            mostFrequentType = birdType;\n        }\n    });\n\n    return mostFrequentType; \n}\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
