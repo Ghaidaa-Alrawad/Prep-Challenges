@@ -1,0 +1,104 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Equality In An Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function equalizeArray(arr) {\n    // Write your code here\n     const frequency = {};\n\n    //count the frequency of each element\n    for (let i = 0; i < arr.length; i++) {\n        if (frequency[arr[i]]) {\n            frequency[arr[i]]++;\n        } else {\n            frequency[arr[i]] = 1;\n        }\n    }\n\n    //find the element with max frequency\n    let maxFrequency = 0;\n    for (const key in frequency) {\n        if (frequency[key] > maxFrequency) {\n            maxFrequency = frequency[key];\n        }\n    }\n\n    //calculate the min num of deletions\n    const minDeletions = arr.length - maxFrequency;\n    return minDeletions;\n}\n\nconst arr = [5, 2, 6, 16, 7];\nconst result = equalizeArray(arr);\nconsole.log(result); \n//the output should be 4"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "4",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function howManyGames(p, d, m, s) {\n    // Return the number of games you can buy\n    let count = 0;\n    let currentPrice = p;\n  \n    while (s >= currentPrice) {\n        count++;\n        s -= currentPrice;\n        currentPrice = Math.max(currentPrice - d, m);\n    }\n  \n    return count;\n\n}\n\nconst p = 20;\nconst d = 3;\nconst m = 6;\nconst s = 80;\nconst result = howManyGames(p, d, m, s);\nconsole.log(result); \n//should be 6"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "6",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Sherlock And Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function squares(a, b) {\n    const start = Math.ceil(Math.sqrt(a));\n    const end = Math.floor(Math.sqrt(b));\n    return end - start + 1;\n}\n\n\nconst testCases = [\n    [3, 9],\n    [17, 24],\n];\n\nfor (let i = 0; i < testCases.length; i++) {\n    const [a, b] = testCases[i];\n    const result = squares(a, b);\n    console.log(result);\n}\n\n//the output should be 2,0"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "0",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
