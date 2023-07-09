@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function equalizeArray(arr) {\n    // Write your code here\n     const frequency = {};\n\n    //count the frequency of each element\n    for (let i = 0; i < arr.length; i++) {\n        if (frequency[arr[i]]) {\n            frequency[arr[i]]++;\n        } else {\n            frequency[arr[i]] = 1;\n        }\n    }\n\n    //find the element with max frequency\n    let maxFrequency = 0;\n    for (const key in frequency) {\n        if (frequency[key] > maxFrequency) {\n            maxFrequency = frequency[key];\n        }\n    }\n\n    //calculate the min num of deletions\n    const minDeletions = arr.length - maxFrequency;\n    return minDeletions;\n}\n\nconst arr = [5, 2, 6, 16, 7];\nconst result = equalizeArray(arr);\nconsole.log(result); \n//the output should be 4"
+                "function equalizeArray(arr) {\n    // Write your code here\n     const frequency = {};\n\n    //count the frequency of each element\n    for (let i = 0; i < arr.length; i++) {\n        if (frequency[arr[i]]) {\n            frequency[arr[i]]++;\n        } else {\n            frequency[arr[i]] = 1;\n        }\n    }\n\n    //find the element with max frequency\n    let maxFrequency = 0;\n    for (const key in frequency) {\n        if (frequency[key] > maxFrequency) {\n            maxFrequency = frequency[key];\n        }\n    }\n\n    //calculate the min num of deletions\n    const minDeletions = arr.length - maxFrequency;\n    return minDeletions;\n}\n\nconst arr = [1, 2, 2, 3];\nconst result = equalizeArray(arr);\nconsole.log(result); \n//the output should be 4"
             ],
             "outputs": [
                 {
@@ -32,7 +32,7 @@
                         {
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
-                                "4",
+                                "2",
                                 ""
                             ]
                         }
