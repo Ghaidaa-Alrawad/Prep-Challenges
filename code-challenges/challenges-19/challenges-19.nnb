@@ -1,0 +1,86 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "#### Time Conversion\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function timeConversion(s) {\n  // Write your code here\n  let time = s.charAt(8);\n  let newHours = \"\";\n  if (time == \"A\") {\n    if (s.substring(0, 2) == \"12\") {\n      newHours = \"00\";\n    } else {\n      newHours = s.substring(0, 2);\n    }\n  } else {\n    if (s.substring(0, 2) == \"12\") {\n      newHours = s.substring(0, 2);\n    } else {\n      newHours = parseInt(s.substring(0, 2), 10) + 12;\n    }\n  }\n\n  return newHours + s.substring(2, 8);\n}\nconst input = \"07:05:45PM\";\nconsole.log(timeConversion(input));\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "19:05:45",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Extra Long Factorials\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function extraLongFactorials(n) {\n  // Write your code here\n  let num = BigInt(1);\n  while (n > 0) {\n    let num2 = BigInt(n.toString());\n    num = num * num2;\n    n--;\n  }\n  console.log(num.toString());\n  // return num.toString();\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Append and Delete\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n  let sArray = s.split(\"\");\n  let tArray = t.split(\"\");\n  let count = 0;\n\n  // Find the common characters between s and t\n  for (let i = 0; i < s.length; i++) {\n    if (sArray[i] == tArray[i]) {\n      count++;\n    } else {\n      break;\n    }\n  }\n\n  //minimum number of operations\n  const minOperations = s.length + t.length - 2 * count;\n\n  //it's possible to convert or not\n  if (\n    k >= s.length + t.length ||\n    (k >= minOperations && (k - minOperations) % 2 === 0)\n  ) {\n    return \"Yes\";\n  } else {\n    return \"No\";\n  }\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Plus Minus"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function plusMinus(arr) {\n    // Write your code here\n    let n = arr.length;\n    let positive = 0;\n    let negative = 0;\n    let zero = 0;\n    \n    for(let i = 0; i<n; i++){\n        if(arr[i]>0){\n            positive+=1;\n        }else if(arr[i]<0){\n            negative+=1;\n        }else{\n            zero+=1;\n        }\n    }\n    \n    let p = positive/n;\n    let n2 = negative/n;\n    let z = zero/n;\n    \n    console.log(p.toFixed(6) + \"\\n\" + n2.toFixed(6) + \"\\n\" + z.toFixed(6));\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Apple and Orange"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function countApplesAndOranges(s, t, a, b, apples, oranges) {\n    // Write your code here\n    let applesResult = apples.map(num => num + a).filter(num => num >=s && num <= t).length;\n    \n    let orangesResult = oranges.map(num => num + b).filter(num => num >=s && num <= t).length;\n    \n    console.log(applesResult+ \"\\n\" + orangesResult);\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
